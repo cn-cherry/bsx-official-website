@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标晟行官网</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/OverlayScrollbars.css" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/OverlayScrollbars.js"></script>
+
+    <style>
+        .navbar-sticky-on {
+            position: fixed;
+            z-index: 1020;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            animation: fadeInDown 0.5s;
+            width: 100%;
+            box-shadow: 0px 0px 40px rgb(83 88 93 / 20%);
+        }
+        
+        .navbar {
+            padding: 0;
+        }
+        
+        .navbar-brand-container {
+            padding: 13px 0;
+            line-height: 1;
+            align-items: center;
+        }
+        
+        .navbar-brand {
+            margin-right: 20px;
+        }
+        
+        .header-title {
+            font-size: 18px;
+            color: #181818;
+            font-weight: 500;
+        }
+        
+        .header-desc {
+            font-size: 12px;
+            margin-bottom: 0px;
+            font-weight: 400;
+        }
+        
+        .module-title {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 80px;
+            margin-bottom: 56px;
+        }
+        
+        .card {
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .ts-desc {
+            font-size: 14px;
+            line-height: 21px;
+            color: #666666;
+        }
+        
+        .ts-img {
+            width: 32px;
+        }
+        
+        p {
+            margin-bottom: 0;
+            display: inline-block;
+        }
+        
+        .footer {
+            background-color: rgba(18, 23, 40, 1);
+        }
+        
+        .footer-item {
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 1em;
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .footer-subitem {
+            text-decoration: none;
+            color: rgba(203, 204, 207, 1);
+            font-size: 14px;
+        }
+        
+        .hs-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hs-item-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .hs-item-desc {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.65);
+        }
+        
+        @media (max-width: 992px) {
+            .display-small {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .ms-8 {
+                margin-left: 0 !important;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .w-lg-50 {
+                width: 50%;
+            }
+        }
+        
+        @media (min-width:992px) and (max-width: 1200px) {
+            .w-lg-50 {
+                width: 40%;
+            }
+        }
+        
+        @media (max-width:992px) {
+            .w-lg-50 {
+                width: 80%;
+            }
+            .py-8 {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+        }
+        
+        @media (max-width:768px) {
+            .w-lg-50 {
+                width: 100%;
+            }
+            .py-8 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+        
+        @media (max-width:576px) {
+            .col-ssm-6 {
+                flex: 0 0 auto;
+                width: 50%;
+            }
+        }
+        
+        @media (max-width:576px) {
+            .mt-sm-3 {
+                margin-top: 1rem !important;
+            }
+        }
+        
+        .py-8 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        
+        .me-8 {
+            margin-right: 6rem;
+        }
+        
+        .ms-8 {
+            margin-left: 6rem;
+        }
+        
+        .shadow-sm {
+            box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 3%) !important;
+        }
+        /* .row {
+            margin-right: 0;
+        } */
+    </style>
+</head>
+
+<body class="custom-scrollbar">
+    <header id="header"></header>
+    <main>
+        <section style="margin-top: 66px;">
+            <!-- 轮播图 -->
+            <div class="row">
+                <div class="col-12 pe-0">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/banner.png" class="d-block w-100" alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/banner.png" class="d-block w-100" alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="..." class="d-block w-100" alt="..." />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <!-- 产品特色 -->
+                <div class="row align-content-between">
+                    <div class="col-12">
+                        <h1 class="module-title fw-bold">产品特色</h1>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_gaoxiao.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">高效便捷使用</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">移动端在线办理数字证书及电子签章，无需线下奔波。手机扫码登录、签章、加密、解密</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_hutong.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">互通交易中心</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">交易中心互联互通，从账户通、CA通、认证通、开通交易中心多方面为企业降本增效</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_quanxian.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">CA权限控制</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">企业管理员可将企业证书授权给企业成员使用。权限维度包括登录、签章、加密、解密</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_xiangmu.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">项目资讯中心</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">汇聚各大交易中心的项目信息，支持用户订阅、关注、 查看项目资讯，随时掌握项目动态</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_miyao.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">密钥分割技术</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">通过将密钥分割技术，将密钥一部分存储在手机终端，一部分存储在云端。确保秘钥安全性</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img class="ts-img me-3" src="../assets/ts_kefu.png" alt="" />
+                                        <h5 class="mb-0 fw-bold">智能客服服务</h5>
+                                    </div>
+                                    <p class="mb-0 ts-desc">7*24小时在线客服。用户随时可进行使用或业务咨询，为客户招投标保驾护航</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="module-title fw-bold">核心功能</h1>
+                </div>
+            </div>
+
+            <div style="background-color:rgba(247, 249, 251, 1)">
+                <div class="container py-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- 移动端管控及使用数字证书 -->
+                            <div class="d-flex align-items-center display-small">
+                                <img class="w-lg-50 shadow-sm" src="../assets/移动端管控.png" alt="" />
+                                <div class="ms-8 mt-md-4 mt-sm-3">
+                                    <p class="hs-title fw-bold">移动端管控及使用数字证书</p>
+                                    <ul class="ps-0 list-unstyled">
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_01_yidong.png" alt="" />
+                                                <p class="hs-item-title">移动办理</p>
+                                            </div>
+                                            <p class="hs-item-desc">通过手机申请数字证书及电子签章，随时随地办理</p>
+                                        </li>
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_01_jizhong.png" alt="" />
+                                                <p class="hs-item-title">集中管理</p>
+                                            </div>
+                                            <p class="hs-item-desc">在APP中更方便的管理在各个交易中心下办理的数字证书</p>
+                                        </li>
+
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_01_saoma.png" alt="" />
+                                                <p class="hs-item-title">扫码即用</p>
+                                            </div>
+                                            <p class="hs-item-desc">通过APP扫码，即可使用数字证书进行登录、签章、加密和解密操作</p>
+                                        </li>
+
+                                        <li class="mb-0">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_01_anquan.png" alt="" />
+                                                <p class="hs-item-title">安全合法</p>
+                                            </div>
+                                            <p class="hs-item-desc">符合《电子签名法》要求，自研秘钥分割、协同运算等技术，确保数字证书存储使用安全</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="container py-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- 移动端管控及使用数字证书 -->
+                            <div class="d-flex align-items-center display-small">
+                                <div class="me-8">
+                                    <p class="hs-title fw-bold">证书授权机制灵活应对申请及使用场景</p>
+                                    <ul class="ps-0 list-unstyled">
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_02_zhengshu.png" alt="" />
+                                                <p class="hs-item-title">证书权限维度</p>
+                                            </div>
+                                            <p class="hs-item-desc">企业管理员可以将企业证书授权给企业成员使用</p>
+                                        </li>
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_02_shiyong.png" alt="" />
+                                                <p class="hs-item-title">使用权限维度</p>
+                                            </div>
+                                            <p class="hs-item-desc">支持按使用权限维度进行授权，包括登录权限、签章权限、加密权限、解密权限</p>
+                                        </li>
+
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_02_juti.png" alt="" />
+                                                <p class="hs-item-title">具体签章权限维度</p>
+                                            </div>
+                                            <p class="hs-item-desc">签章权限又可精确的控制到具体的某个或某几个企业印章的权限</p>
+                                        </li>
+
+                                        <li class="mb-0">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_02_cishu.png" alt="" />
+                                                <p class="hs-item-title">期限及次数</p>
+                                            </div>
+                                            <p class="hs-item-desc">支持对授权使用的时间期限和使用次数进行控制</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <img class="w-lg-50 shadow-sm" src="../assets/证书授权.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="background-color:rgba(247, 249, 251, 1)">
+                <div class="container py-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- 移动端管控及使用数字证书 -->
+                            <div class="d-flex align-items-center display-small">
+                                <img class="w-lg-50 shadow-sm" src="../assets/电子签章.png" alt="" />
+                                <div class="ms-8">
+                                    <p class="hs-title fw-bold">电子签章</p>
+                                    <ul class="ps-0 list-unstyled">
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_03_shouxie.png" alt="" />
+                                                <p class="hs-item-title">个人手写签名</p>
+                                            </div>
+                                            <p class="hs-item-desc">支持生成管理个人手写签名</p>
+                                        </li>
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_03_dianzi.png" alt="" />
+                                                <p class="hs-item-title">企业电子印章</p>
+                                            </div>
+                                            <p class="hs-item-desc">支持生成管理各种类型的企业电子印章，包括企业公章、法人代表印章等</p>
+                                        </li>
+
+
+                                        <li class="mb-0">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_03_shouquan.png" alt="" />
+                                                <p class="hs-item-title">电子印章授权</p>
+                                            </div>
+                                            <p class="hs-item-desc">支持对企业成员授权电子印章使用权限</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="container py-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- 移动端管控及使用数字证书 -->
+                            <div class="d-flex align-items-center display-small">
+                                <div class="me-8">
+                                    <p class="hs-title fw-bold">交易中心互联互通为企业降本增效</p>
+                                    <ul class="ps-0 list-unstyled">
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_04_yonghu.png" alt="" />
+                                                <p class="hs-item-title">账户通</p>
+                                            </div>
+                                            <p class="hs-item-desc">用户通过APP扫码可登录多家交易中心平台网站</p>
+                                        </li>
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_04_ca.png" alt="" />
+                                                <p class="hs-item-title">CA通</p>
+                                            </div>
+                                            <p class="hs-item-desc">用户可跨区域、跨平台使用同一本数字证书</p>
+                                        </li>
+
+
+                                        <li class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_04_renzheng.png" alt="" />
+                                                <p class="hs-item-title">认证通</p>
+                                            </div>
+                                            <p class="hs-item-desc">用户一次身份认证，多家交易中心共享认证结果</p>
+                                        </li>
+
+                                        <li class="mb-0">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img class="me-3" src="../assets/hs_04_kaitong.png" alt="" />
+                                                <p class="hs-item-title">开通交易中心</p>
+                                            </div>
+                                            <p class="hs-item-desc">对于未达成互联互通的交易中心，可通过开通交易中心的方式，实现跨区域、跨平台使用同一本数字证书</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <img class="w-lg-50 shadow-sm" src="../assets/互联互通.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5" style="background-color:rgba(247, 249, 251, 1)">
+            <!-- 合作交易中心 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="module-title fw-bold">合作交易中心</h1>
+
+                        <div class="row" style="font-size: 14px;" id="trade-center">
+                            <div class="col-lg-12-5 col-sm-6 mb-4">
+                                <div class="card">
+                                    <div class="card-body p-2 py-3 text-center">
+                                        <p>南京公共资源交易中心</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+        </section>
+
+        <section class="pb-5">
+            <!-- 合作伙伴 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="module-title fw-bold">合作伙伴</h1>
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_cfca.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_g.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_dianxin.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_guanglianda.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_feitian.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_jsca.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_haidi.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_suning.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_xindian.png" alt="" />
+                    </div>
+
+                    <div class="col-lg-12-5 col-sm-6 mb-4">
+                        <img class="shadow-sm" src="../assets/hb_yurun.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer"></footer>
+
+    <script>
+        const tradeCenters = [
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心',
+            '南京公共资源交易中心'
+        ]
+
+        window.onload = () => {
+            $('header').load('nav.html')
+            $('footer').load('footer.html')
+            loadTradeCenter()
+        }
+
+        const header = document.getElementById('header')
+        document.addEventListener('scroll', () => {
+            if (window.pageYOffset >= 76) {
+                header.classList.add('navbar-sticky-on')
+            } else {
+                header.classList.remove('navbar-sticky-on')
+            }
+        })
+
+        OverlayScrollbars(document.querySelectorAll('.custom-scrollbar'), {
+            className: "os-theme-dark",
+            scrollbars: {
+                clickScrolling: true,
+                autoHide: "leave",
+            }
+        });
+
+        const loadTradeCenter = () => {
+            const el = document.getElementById('trade-center')
+            let s = ``
+            for (let i = 0; i < tradeCenters.length; i++) {
+                s = s.concat(`<div class="col-lg-12-5 col-sm-4 col-ssm-6 mb-4">
+                                <div class="card">
+                                    <div class="card-body p-2 py-3 text-center">
+                                        <p>${tradeCenters[i]}</p>
+                                    </div>
+                                </div>
+                            </div>`)
+            }
+            s = s.concat(`<a href="#" class="d-block text-center text-decoration-none">查看所有<i class="bi bi-arrow-right-short"></i></a>`)
+            el.innerHTML = s
+        }
+    </script>
+</body>
+
+</html>
